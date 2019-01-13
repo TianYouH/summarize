@@ -19,7 +19,7 @@ var onRightEdge, // 右侧边缘
 var rightScreenEdge,
     bottomScreenEdge;
 
-var preSnapped;
+var preSnapped; // 放大 容器
 
 var b, // 拖放 元素 边界 信息
     x, 
