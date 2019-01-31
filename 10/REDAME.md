@@ -2,14 +2,9 @@
 
 1. null
 2. null
-3. 自定义滚动条 
+3. null 
 4. null 
 5. null 
-6. 边框 绘制 三角 
-7. 框架 效果 
-8. 滤镜 filter
-9. 鼠标 cursor
-10. 纯CSS3实现DIV高亮显示特效  jquery+CSS3实现鼠标移动到DIV上高亮显示特效
-11. transition 
-12. null 
-13. 示例 分页器样式
+6. CSS3 滤镜_filter
+7. CSS 兼容
+8. CSS 重置
