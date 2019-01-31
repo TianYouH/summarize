@@ -1,206 +1,315 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>9.3</title>
-<style type="text/css">
-@font-face {
-    font-family: 'EntypoRegular';
-    src: url('./font/entypo-webfont.eot');
-    src: url('./font/entypo-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./font/entypo-webfont.woff') format('woff'),
-         url('./font/entypo-webfont.ttf') format('truetype'),
-         url('./font/entypo-webfont.svg#EntypoRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-.button, .button-bevel {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  padding: 7px 20px 9px;
-  margin: .5em .5em .5em 0;
-  cursor: pointer;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
-  -webkit-transition: 0.1s linear;
-  -moz-transition: 0.1s linear;
-  -ms-transition: 0.1s linear;
-  -o-transition: 0.1s linear;
-  transition: 0.1s linear;
-}
-.button {
-  border-radius: 2px;
-  box-shadow: inset rgba(255,255,255,0.3) 1px 1px 0;
-} 
-.button:active {
-  box-shadow: inset rgba(0,0,0,0.4) 0px 0px 6px;
-}
-.rounded {
-    border-radius: 20px;
-}
-.orange {
-  background: rgb(255,183,0);
-  background: -moz-linear-gradient(top,  rgba(255,183,0,1) 0%, rgba(255,140,0,1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,183,0,1)), color-stop(100%,rgba(255,140,0,1)));
-  background: -webkit-linear-gradient(top,  rgba(255,183,0,1) 0%,rgba(255,140,0,1) 100%);
-  background: -o-linear-gradient(top,  rgba(255,183,0,1) 0%,rgba(255,140,0,1) 100%);
-  background: -ms-linear-gradient(top,  rgba(255,183,0,1) 0%,rgba(255,140,0,1) 100%);
-  background: linear-gradient(to bottom,  rgba(255,183,0,1) 0%,rgba(255,140,0,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb700', endColorstr='#ff8c00',GradientType=0 );
-  border: 1px solid #e59500;
-} 
-.orange:hover {
-  background: rgb(255,203,72);
-  background: -moz-linear-gradient(top,  rgba(255,203,72,1) 0%, rgba(255,156,35,1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,203,72,1)), color-stop(100%,rgba(255,156,35,1)));
-  background: -webkit-linear-gradient(top,  rgba(255,203,72,1) 0%,rgba(255,156,35,1) 100%);
-  background: -o-linear-gradient(top,  rgba(255,203,72,1) 0%,rgba(255,156,35,1) 100%);
-  background: -ms-linear-gradient(top,  rgba(255,203,72,1) 0%,rgba(255,156,35,1) 100%);
-  background: linear-gradient(to bottom,  rgba(255,203,72,1) 0%,rgba(255,156,35,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcb48', endColorstr='#ff9c23',GradientType=0 );
-}
-.button-bevel {
-  vertical-align: top;
-  border-radius: 4px;
-  border: none;
-  padding: 10px 25px 12px;
-} 
-.button-bevel:active {
-    position: relative;
-    top: 5px;
-} 
-.button-bevel.orange {
-  box-shadow: #c46d00 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
-}
-.button-bevel.orange:active {
-  box-shadow: #c46d00 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
-}
-.button-bevel.magenta {
-  box-shadow: #ca075c 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
-}
-.button-bevel.magenta:active {
-box-shadow: #ca075c 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
-}
-.button-bevel.cyan {
-  box-shadow: #1994d3 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
-}
-.button-bevel.cyan:active {
-box-shadow: #1994d3 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
-}
-.button-bevel.red {
-  box-shadow: #88180e 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
-}
-.button-bevel.red:active {
-box-shadow: #88180e 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
-}
-.button-bevel.black {
-  box-shadow: #000 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px, inset rgba(255, 255, 255, 0.3) 0 0 3px;
-}
-.button-bevel.black:active {
-box-shadow: #000 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px, inset rgba(255, 255, 255, 0.3) 0 0 3px;  
-}
-.button-bevel.green {
-  box-shadow: #439230 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
-}
-.button-bevel.green:active {
-box-shadow: #439230 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;  
-}
-.button span, .button-bevel span {
-  font-family: 'EntypoRegular';
-  font-size: 20px;
-  font-weight: normal;
-  vertical-align: middle; 
-  line-height: 0;
-  margin-right: .1em;
-}
-.refresh:after { content: "h"; font-size: 34px; }
-.shuffle:after { content: "f"; font-size: 34px; }
-.preview:after { content: "M"; font-size: 34px; }
-.tea:after { content: "u"; font-size: 34px; }
-.wifi:after { content: "T"; font-size: 34px; }
-.locator:after { content: "0"; font-size: 34px; }
-
-.rss:after { content: "S"; font-size: 34px; }
-.cloud:after { content: "y"; font-size: 34px; }
-.download:after { content: "w"; font-size: 34px; }
-.trash:after { content: "I"; font-size: 34px; }
-.rack:after { content: "t"; font-size: 34px; }
-.map:after { content: "1"; font-size: 34px; }
-
-.setting:after { content: "@"; font-size: 34px; }
-.identity:after { content: "."; font-size: 34px; }
-.navigation:after { content: "2"; font-size: 34px; }
-.gallery:after { content: "p"; font-size: 34px; }
-.email:after { content: "%"; font-size: 34px; }
-.users:after { content: "+"; font-size: 34px; }
-
-.calendar:after { content: "P"; font-size: 34px; }
-.link:after { content: ">"; font-size: 34px; }
-.time:after { content: "N"; font-size: 34px; }
-.folder:after { content: "s"; font-size: 34px; }
-.tag:after { content: "C"; font-size: 34px; }
-.share:after { content: "5"; font-size: 34px; }
-
-.lock:after { content: "U"; font-size: 34px; }
-.unlock:after { content: "V"; font-size: 34px; }
-.mic:after { content: "O"; font-size: 34px; }
-.love:after { content: "6"; font-size: 34px; }
-.star:after { content: "7"; font-size: 34px; }
-.like:after { content: "8"; font-size: 34px; }
-
-.phone:after { content: "!"; font-size: 34px; }
-.flag:after { content: "?"; font-size: 34px; }
-.adduser:after { content: "-"; font-size: 34px; }
-.attach:after { content: "'"; font-size: 34px; }
-.comment:after { content: ":"; font-size: 34px; }
-.edit:after { content: "&"; font-size: 34px; }
-
-.upload:after { content: "v"; font-size: 34px; }
-.storage:after { content: "x"; font-size: 34px; }
-.photo:after { content: "D"; font-size: 34px; }
-.help:after { content: "K"; font-size: 34px; }
-.glass:after { content: "R"; font-size: 34px; }
-.print:after { content: "<"; font-size: 34px; }
-
-.gadget:after { content: '"'; font-size: 34px; }
-</style>
-</head>
-<body>
-<div data-for="beveled">
-    <p>
-        <a href="javascript:void(0)" class="button-bevel orange"> <span class="refresh"></span> Button </a>
-        <a href="javascript:void(0)" class="button-bevel orange"> <span class="shuffle"></span> Button </a>
-        <a href="javascript:void(0)" class="button-bevel orange"> <span class="preview"></span> Button </a> 
-        <a href="javascript:void(0)" class="button-bevel orange"> <span class="tea"></span> Button </a> 
-        <a href="javascript:void(0)" class="button-bevel orange"> <span class="wifi"></span> Button </a> 
-        <a href="javascript:void(0)" class="button-bevel orange"> <span class="locator"></span> Button </a> 
-    </p>
-    
-</div>
-
-<div data-for="rectangle">
-    <p>
-        <a href="javascript:void(0)" class="button orange"> <span class="refresh"></span> Button </a>
-        <a href="javascript:void(0)" class="button orange"> <span class="shuffle"></span> Button </a>
-        <a href="javascript:void(0)" class="button orange"> <span class="preview"></span> Button </a> 
-        <a href="javascript:void(0)" class="button orange"> <span class="tea"></span> Button </a> 
-        <a href="javascript:void(0)" class="button orange"> <span class="wifi"></span> Button </a> 
-        <a href="javascript:void(0)" class="button orange"> <span class="locator"></span> Button </a> 
-    </p>
-</div>
-<div data-for="rounded">
-    <p>
-        <a href="javascript:void(0)" class="button rounded orange"> <span class="edit"></span> Button </a>
-        <a href="javascript:void(0)" class="button rounded orange"> <span class="upload"></span> Button </a>
-        <a href="javascript:void(0)" class="button rounded orange"> <span class="storage"></span> Button </a> 
-        <a href="javascript:void(0)" class="button rounded orange"> <span class="photo"></span> Button </a> 
-        <a href="javascript:void(0)" class="button rounded orange"> <span class="help"></span> Button </a>  
-        <a href="javascript:void(0)" class="button rounded orange"> <span class="locator"></span> Button </a> 
-    </p>
-</div>
-
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>9.3</title>
+    <script>
+      var snd = new Audio('');
+      document.addEventListener('change', function(e) {
+        if (e.target.parentNode.className.indexOf('checkboxControl') != -1) {
+          snd.currentTime = 0;
+          snd.play();
+        }
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font: 15px/1 arial;
+        text-align: center;
+        background: #509dad;
+      }
+      body:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      fieldset {
+        display: inline-block;
+        vertical-align: middle;
+        border: none;
+        width: 370px;
+      }
+      .legend {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 12px;
+        margin-bottom: 14px;
+        height: 15px;
+        border-color: #2e6677;
+        border-style: solid;
+        border-width: 1px 1px 0 1px;
+        box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2) inset;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+      }
+      .legend span {
+        text-transform: uppercase;
+        position: relative;
+        top: -5px;
+        padding: 0 10px;
+        background: #509dad;
+        display: inline-block;
+      }
+      .checkboxGroup {
+        display: inline-block;
+        vertical-align: middle;
+        width: 150px;
+        border: none;
+      }
+      .checkboxControl {
+        border: 2px solid #102838;
+        border-radius: 7px;
+        display: inline-block;
+        width: 100px;
+        height: 50px;
+        padding-top: 1px;
+        position: relative;
+        vertical-align: middle;
+        margin: 0 60px 10px 0;
+        color: #297597;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.4), 0 2px 1px -1px rgba(255, 255, 255, 0.7) inset,
+          8px 0 5px -5px #02425c inset, -8px 0 5px -5px #02425c inset;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        background: #80dce9;
+      }
+      .checkboxControl input {
+        position: absolute;
+        visibility: hidden;
+      }
+      .checkboxControl > div {
+        background: -webkit-linear-gradient(left, #8fd9e4 0%, #a0f2fe 53%, #69dcf1 56%, #33afce 99%, #cef5ff 100%);
+        background: linear-gradient(to right, #8fd9e4 0%, #a0f2fe 53%, #69dcf1 56%, #33afce 99%, #cef5ff 100%);
+        box-shadow: -2px 0 1px 0 #a6f2fe inset;
+        border-radius: 5px;
+        line-height: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform: scaleX(0.93);
+        -webkit-transform: scaleX(0.93);
+        transition: 0.1s;
+        -webkit-transition: 0.1s;
+      }
+      .checkboxControl div:first-letter {
+        letter-spacing: 55px;
+      }
+      .checkboxControl :checked ~ div {
+        transform-origin: 100% 0;
+        -webkit-transform-origin: 100% 0;
+        box-shadow: 2px 0 1px 0 #a6f2fe inset;
+        background: -webkit-linear-gradient(left, #cef5ff 0%, #33afce 1%, #69dcf1 47%, #a0f2fe 50%, #8fd9e4 100%);
+        background: linear-gradient(to right, #cef5ff 0%, #33afce 1%, #69dcf1 47%, #a0f2fe 50%, #8fd9e4 100%);
+      }
+      .checkboxControl > b {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 8px;
+        -webkit-transform: skewY(5deg);
+        transform: skewY(5deg);
+        box-shadow: 0 6px 8px -5px #000;
+      }
+      .checkboxControl :checked ~ b {
+        right: auto;
+        left: 0;
+        -webkit-transform: skewY(-5deg);
+        transform: skewY(-5deg);
+      }
+      .checkboxControl .indicator {
+        position: absolute;
+        top: 14px;
+        right: -20px;
+        width: 8px;
+        height: 25px;
+        box-shadow: 0 0 8px #000 inset;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        transition: 0.2s;
+        -webkit-transition: 0.2s;
+      }
+      .checkboxControl .indicator:before {
+        content: '';
+        display: inline-block;
+        margin-top: 8px;
+        width: 2px;
+        height: 8px;
+        border-radius: 10px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+      }
+      .checkboxControl :checked ~ .indicator:before {
+        box-shadow: 0 0 7px 6px #bafc58;
+        width: 6px;
+        background: #f0f9e3;
+        transition: 0.1s;
+        -webkit-transition: 0.1s;
+      }
+      .checkboxControl2 {
+        border: 2px solid #102838;
+        border-radius: 7px;
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: bold;
+        width: 60px;
+        height: 100px;
+        position: relative;
+        margin: 0 5px;
+        color: #12678c;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+      }
+      .checkboxControl2 input {
+        position: absolute;
+        visibility: hidden;
+      }
+      .checkboxControl2 > div {
+        background: -webkit-linear-gradient(
+          top,
+          #002b44 0%,
+          #0690ac 11%,
+          #038eaa 14%,
+          #a0f2fe 58%,
+          #91dbe7 96%,
+          #b9e8e8 100%
+        );
+        background: linear-gradient(
+          to bottom,
+          #002b44 0%,
+          #0690ac 11%,
+          #038eaa 14%,
+          #a0f2fe 58%,
+          #91dbe7 96%,
+          #b9e8e8 100%
+        );
+        height: 100%;
+        border-radius: 5px;
+        line-height: 50px;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+      }
+      .checkboxControl2 > div:after {
+        content: 'Ο';
+        display: block;
+        height: 50%;
+        line-height: 4;
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+      }
+      .checkboxControl2 > div:before {
+        content: 'Ι';
+        display: block;
+        height: 50%;
+        line-height: 2.5;
+        border-radius: 80%/5px;
+        box-shadow: 0 8px 12px -13px #89dfed inset, 0 -2px 2px -1px rgba(255, 255, 255, 0.8);
+        transform-origin: 0 100%;
+        -webkit-transform-origin: 0 100%;
+        transform: scaleY(0.7);
+        -webkit-transform: scaleY(0.7);
+      }
+      .checkboxControl2 :checked ~ div {
+        background: -webkit-linear-gradient(
+          bottom,
+          #002b44 0%,
+          #0690ac 11%,
+          #038eaa 14%,
+          #a0f2fe 58%,
+          #91dbe7 96%,
+          #b9e8e8 100%
+        );
+        background: linear-gradient(
+          to top,
+          #002b44 0%,
+          #0690ac 11%,
+          #038eaa 14%,
+          #a0f2fe 58%,
+          #91dbe7 96%,
+          #b9e8e8 100%
+        );
+      }
+      .checkboxControl2 :checked ~ div:before {
+        border-radius: 0;
+        box-shadow: none;
+        transform: none;
+        -webkit-transform: none;
+      }
+      .checkboxControl2 :checked ~ div:after {
+        border-radius: 80%/5px;
+        box-shadow: 0 -8px 12px -5px #89dfed inset, 0 2px 2px 0 #0690ac;
+        transform: scaleY(0.7);
+        -webkit-transform: scaleY(0.7);
+      }
+      .checkboxControl2 .indicator {
+        position: absolute;
+        top: -20px;
+        left: 17px;
+        width: 25px;
+        height: 8px;
+        box-shadow: 0 0 8px #000 inset;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        transition: 0.2s;
+        -webkit-transition: 0.2s;
+      }
+      .checkboxControl2 .indicator:before {
+        content: '';
+        display: block;
+        margin: 2px auto;
+        width: 8px;
+        height: 5px;
+        border-radius: 10px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+      }
+      .checkboxControl2 :checked ~ .indicator:before {
+        box-shadow: 0 0 2px 0px #f95757 inset, 0 0 12px 6px #f95757;
+        background: #fff;
+        transition: 0.1s;
+        -webkit-transition: 0.1s;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <div class="legend"><span>power switchs</span></div>
+      <div class="checkboxGroup">
+        <label class="checkboxControl">
+          <input type="checkbox" />
+          <div>ΟΙ</div>
+          <b></b> <span class="indicator"></span>
+        </label>
+        <label class="checkboxControl">
+          <input type="checkbox" />
+          <div>ΟΙ</div>
+          <b></b> <span class="indicator"></span>
+        </label>
+      </div>
+      <label class="checkboxControl2">
+        <input type="checkbox" />
+        <div></div>
+        <span class="indicator"></span>
+      </label>
+      <label class="checkboxControl2">
+        <input type="checkbox" />
+        <div></div>
+        <span class="indicator"></span>
+      </label>
+    </fieldset>
+  </body>
 </html>
