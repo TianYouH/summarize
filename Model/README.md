@@ -43,3 +43,6 @@
 41. Model 开关
 42. Model 计算器
 43. Model 提示框
+
+44. Model DOM_API_DRAG 💗
+45. Model Reaize 💗
