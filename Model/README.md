@@ -11,8 +11,8 @@
 9. Model 轮播图_手风琴效果
 10. Model 图片镜像
 11. Model 图像地图
-12. Model 文字毛玻璃效果
-13. Model 金属质感文字
+12. Model null 🗑
+13. Model null 🗑
 14. Model 隐藏文本
 15. Model 滑动导航菜单
 16. Model 右键菜单

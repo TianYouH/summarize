@@ -73,10 +73,28 @@
           2px 3px #384762, 4px 3px #546a92, 3px 4px #384762, 5px 4px #546a92, 4px 5px #384762, 6px 5px #546a92,
           5px 6px #384762, 7px 6px #546a92, 6px 7px #384762, 8px 7px #546a92, 7px 8px #384762, 8px 8px #546a92;
       }
-      /* 样式 4 */
-
-      /* 样式 5 */
-
+      /* 样式 4 毛玻璃*/
+      .normal {
+        transition: all 0.5s ease;
+        transform: scale(0.9);
+        color: rgba(0, 0, 0, 0);
+        text-shadow: 0 0 10px black;
+      }
+      /* 样式 5 金属质感*/
+      .metal {
+        color: white;
+        background: black;
+        font-weight: bold;
+        font-size: 30px;
+        position: relative;
+      }
+      .metal > .cover {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(to bottom, black 0%, transparent 50%, black);
+        opacity: 0.5;
+      }
       /* 样式 6 */
       /* 样式 7 */
       /* 样式 8 */
@@ -89,5 +107,7 @@
     <div class="text">广州-龙</div>
     <div class="text2">ONLY $169.99</div>
     <div class="raleway">测试三</div>
+    <div class="normal">本实例演示毛玻璃效果。</div>
+    <div class="metal" ><span class="cover"></span>金属质感文字</div>
   </body>
 </html>
