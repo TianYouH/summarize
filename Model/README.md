@@ -20,3 +20,8 @@
 18. Model 选中分享
 19. Model H5播放器
 20. Model 根据文件格式设置链接图标
+21. Model 多背景
+22. Model 全屏背景
+23. Model css斑马线 css棋盘 css格子
+24. Model CSS与易拉罐3D滚动效果
+25. Model 顶部阴影
