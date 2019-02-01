@@ -34,3 +34,5 @@
 32. Model 雪花飘落效果
 33. Model MAC DOCK栏
 34. Model 扇形展开
+35. Model 边框架 样式
+36. Model 分页器样式
