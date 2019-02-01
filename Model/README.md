@@ -41,3 +41,5 @@
 39. Model 3D_骰子
 40. Model 图片折叠效果
 41. Model 开关
+42. Model 计算器
+43. Model 提示框

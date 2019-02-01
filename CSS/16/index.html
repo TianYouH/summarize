@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>10.6</title>
+    <style>
+      /*设置灰度滤镜*/
+      .greyscale img {
+        filter: grayscale(1);
+      }
+      .greyscale img:hover {
+        filter: grayscale(0);
+      }
+      /*设置老照片滤镜*/
+      .sepia img {
+        filter: sepia(1);
+      }
+      .sepia img:hover {
+        filter: sepia(0);
+      }
+      /*设置饱和度滤镜*/
+      .saturate img {
+        filter: saturate(500%);
+      }
+      .saturate img:hover {
+        filter: saturate(100%);
+      }
+      /*设置色相反转滤镜*/
+      .hue-rotate img {
+        filter: hue-rotate(180deg);
+      }
+      .hue-rotate img:hover {
+        filter: hue-rotate(0);
+      }
+      /*设置反色滤镜*/
+      .invert img {
+        filter: invert(1);
+      }
+      .invert img:hover {
+        filter: invert(0);
+      }
+      /*设置透明度滤镜*/
+      .opacity img {
+        opacity: 0.3;
+      }
+      .opacity img:hover {
+        opacity: 1;
+      }
+      /*设置亮度滤镜*/
+      .brightness img {
+        filter: brightness(50%);
+      }
+      .brightness img:hover {
+        filter: brightness(100%);
+      }
+      /*设置对比度滤镜*/
+      .contrast img {
+        filter: contrast(0.3);
+      }
+      .contrast img:hover {
+        filter: contrast(1);
+      }
+      /*设置模糊滤镜*/
+      .blur img {
+        filter: url(/static/svg/filter.svg#blur);
+        filter: blur(5px);
+      }
+      .blur img:hover {
+        filter: blur(0);
+      }
+      /*设置阴影*/
+      .drop-shadow {
+        filter: drop-shadow(5px 5px 5px #ccc);
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>设置灰度滤镜</p>
+    <div class="drop-shadow greyscale"><img src="images/beauty.jpg" height="200" /></div>
+    <p>设置老照片滤镜</p>
+    <div class="drop-shadow sepia"><img src="images/beauty.jpg" height="200" /></div>
+    <p>设置饱和度滤镜</p>
+    <div class="drop-shadow saturate"><img src="images/beauty.jpg" height="200" /></div>
+    <p>设置色相反转滤镜</p>
+    <div class="drop-shadow hue-rotate"><img src="images/beauty.jpg" height="200" /></div>
+    <p>设置反色滤镜</p>
+    <div class="drop-shadow invert"><img src="images/beauty.jpg" height="200" /></div>
+    <p>设置透明度滤镜</p>
+    <div class="drop-shadow opacity"><img src="images/beauty.jpg" height="200" /></div>
+    <p>设置亮度滤镜</p>
+    <div class="drop-shadow brightness"><img src="images/beauty.jpg" height="200" /></div>
+    <p>设置对比度滤镜</p>
+    <div class="drop-shadow contrast"><img src="images/beauty.jpg" height="200" /></div>
+    <p>设置模糊滤镜</p>
+    <div class="drop-shadow blur"><img src="images/beauty.jpg" height="200" /></div>
+  </body>
+</html>
