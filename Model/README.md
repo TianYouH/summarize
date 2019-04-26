@@ -46,3 +46,4 @@
 
 44. Model DOM_API_DRAG 💗
 45. Model Reaize 💗
+46. Model canvas 不规则矩形绘制
