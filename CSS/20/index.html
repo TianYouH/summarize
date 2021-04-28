@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex 三点色子</title>
+  <link rel="stylesheet" href="../../styles/a11y-dark.css" />
+</head>
+<style>
+  /* flex 画三个点的骰子 */
+  .box {
+    height: 200px;
+    width: 200px;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: coral;
+  }
+
+  .item {
+    /* 背景色，大小，边框 */
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+  }
+
+  .item:nth-child(2) {
+    align-self: center;
+    /* 第二项居中对齐 */
+  }
+
+  .item:nth-child(3) {
+    align-self: flex-end;
+    /* 第三项尾对齐 */
+  }
+</style>
+
+<body>
+  <div class="box">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+  <pre>
+    <code>
+&lt;style&gt;
+  /* flex 画三个点的骰子 */
+  .box {
+    height: 200px;
+    width: 200px;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: coral;
+  }
+
+  .item {
+    /* 背景色，大小，边框 */
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+  }
+
+  .item:nth-child(2) {
+    align-self: center;
+    /* 第二项居中对齐 */
+  }
+
+  .item:nth-child(3) {
+    align-self: flex-end;
+    /* 第三项尾对齐 */
+  }
+&lt;/style&gt;
+
+&lt;body&gt;
+  &lt;div class="box"&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+    &lt;div class="item"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+    </code>
+  </pre>
+</body>
+<script src="../../highlight.pack.js"></script>
+<script>
+  // 初始化
+  hljs.highlightAll();
+</script>
+
+</html>

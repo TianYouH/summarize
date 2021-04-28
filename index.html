@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>summarize</title>
 </head>
-<body>
-  <section>
-    <h1>css</h1>
-    <ul>
-      <li><a href="/summarize/CSS/19/双飞翼布局.html">双飞翼布局</a></li>
-      <li><a href="/summarize/CSS/19/圣杯布局.html">圣杯布局</a></li>
-    </ul>
-  </section>
-</body>
+
+<body id="app"></body>
+<script>
+  const cssObj = {
+    label: "CSS",
+    urls: [
+      {
+        label: "双飞翼布局",
+        url: "/CSS/19/双飞翼布局.html"
+      },
+      {
+        label: "圣杯布局",
+        url: "/CSS/19/圣杯布局.html"
+      },
+      {
+        label: "flex 三点色子",
+        url: "/CSS/20"
+      },
+    ]
+  }
+</script>
+<script>
+  /**
+   * 初始化页面
+  */
+  function initTestModelUrl(listObj, parantNode, baseUrl) {
+    const frag = document.createDocumentFragment();
+    const section = document.createElement("section");
+    const h1 = document.createElement("h1");
+    const ul = document.createElement("ul");
+    h1.innerText = listObj.label;
+    listObj.urls.forEach(({ label, url }) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = baseUrl + url;
+      a.innerText = label;
+      li.appendChild(a);
+      ul.appendChild(li);
+    })
+    section.appendChild(h1);
+    section.appendChild(ul);
+    frag.appendChild(section);
+    parantNode.appendChild(frag)
+  }
+</script>
+<script>
+  const body = document.getElementById("app");
+  let base = ""
+  const { host } = window.location;
+  if (host === "tianyouh.github.io") {
+    base = "/summarize"
+  }
+  initTestModelUrl(cssObj, body, base)
+</script>
+
 </html>
