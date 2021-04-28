@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>垂直居中</title>
+</head>
+<style>
+.box {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background-color: green;
+}
+.child {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+/* .box1 {
+} */
+.child1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.child2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+<body>
+  <h1>absolute元素: top, left, bottom, right = 0 + margin: auto；</h1>
+  <div class="box box1" >
+    测试父容器
+    <div class="child child1" >
+      测试子容器
+    </div>
+  </div>
+  <h1>absolute元素:  top, left = 50% + translate(-50%, -50%)；</h1>
+  <div class="box box2" >
+    测试父容器
+    <div class="child child2" >
+      测试子容器
+    </div>
+  </div>
+  <h1>flex</h1>
+  <div class="box box3" >
+    <div class="child child3" >
+      测试子容器
+    </div>
+  </div>
+</body>
+</html>
