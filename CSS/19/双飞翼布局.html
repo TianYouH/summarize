@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>双飞翼布局</title>
+    <link rel="stylesheet" href="../../styles/a11y-dark.css" />
     <style type="text/css">
         html,
         body {
@@ -50,52 +51,62 @@
 <body>
     <div id="main" class="col">
         <div id="main-wrap">
-            this is main
-            <textarea style="width: 80%;
-            height: 700px;">
-<style type="text/css">
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-    }
-
-    body {
-        min-width: 550px;
-    }
-
-    .col {
-        float: left;
-    }
-
-    #main {
-        width: 100%;
-        height: 100%;
-        background-color: #ccc;
-    }
-
-    #main-wrap {
-        margin: 0 190px 0 190px;
-    }
-
-    #left {
-        width: 190px;
-        height: 100%;
-        background-color: #0000ff;
-        margin-left: -100%;
-    }
-
-    #right {
-        width: 190px;
-        height: 100%;
-        background-color: #ff0000;
-        margin-left: -190px;
-    }
-</style>
-<body>
-    <div id="main" class="col">
-        <div id="main-wrap">
-            this is main
+            <pre>
+                <code>
+                    &lt;style type="text/css"&gt;
+                    html,
+                    body {
+                        height: 100%;
+                        margin: 0;
+                    }
+                  
+                    body {
+                        min-width: 550px;
+                    }
+                  
+                    .col {
+                        float: left;
+                    }
+                  
+                    #main {
+                        width: 100%;
+                        height: 100%;
+                        background-color: #ccc;
+                    }
+                  
+                    #main-wrap {
+                        margin: 0 190px 0 190px;
+                    }
+                  
+                    #left {
+                        width: 190px;
+                        height: 100%;
+                        background-color: #0000ff;
+                        margin-left: -100%;
+                    }
+                  
+                    #right {
+                        width: 190px;
+                        height: 100%;
+                        background-color: #ff0000;
+                        margin-left: -190px;
+                    }
+                  &lt;/style&gt;
+                  &lt;body&gt;
+                    &lt;div id="main" class="col"&gt;
+                        &lt;div id="main-wrap"&gt;
+                            this is center
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div id="left" class="col"&gt;
+                        this is left
+                    &lt;/div&gt;
+                    &lt;div id="right" class="col"&gt;
+                        this is right
+                    &lt;/div&gt;
+                  &lt;/body&gt;
+                </code>
+            </pre>
         </div>
     </div>
     <div id="left" class="col">
@@ -105,15 +116,10 @@
         this is right
     </div>
 </body>
-            </textarea>
-        </div>
-    </div>
-    <div id="left" class="col">
-        this is left
-    </div>
-    <div id="right" class="col">
-        this is right
-    </div>
-</body>
+<script src="../../highlight.pack.js"></script>
+<script>
+    // 初始化
+    hljs.highlightAll();
+</script>
 
 </html>
