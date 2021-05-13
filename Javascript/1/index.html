@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原型和原型链</title>
+</head>
+<body>
+  <h1>原型和原型链</h1>
+  <button onclick="onPrintClick()" >打印</button>
+</body>
+<script>
+  class People {
+    constructor(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    say () {
+      console.log("我的名字叫：", this.name);
+    }
+  }
+  // const p1 = new People("黄大", 167);
+  // p1.say()
+
+  class Student extends People {
+    constructor (name, age, clas) {
+      super(name, age)
+      this.clas = clas;
+    }
+    sayCalss () {
+      console.log('我是' + this.clas + "年级的" + this.name);
+    }
+  }
+
+  const s1 = new Student('野原新之助', 18, 6);
+
+  s1.say()
+  s1.sayCalss()
+  function onPrintClick() {
+    s1.say()
+    s1.sayCalss()
+    console.log("Student.prototype.__proto__ === People.prototype：", Student.prototype.__proto__ === People.prototype);
+  }
+// Student.prototype.__proto__ === People.prototype // true
+
+</script>
+</html>
