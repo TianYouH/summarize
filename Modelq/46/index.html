@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas动态绘图</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="400"></canvas>
+    <script>
+        var cvs = document.getElementById("canvas");
+        var cvsClientRect = cvs.getBoundingClientRect();
+        var points = [];
+        canvas.addEventListener('dblclick',doubleClick,false); 
+        cvs.addEventListener("mousedown", mousedownHandler, false);
+        var ctx = cvs.getContext('2d');
+        var flag = false;
+
+        function mousedownHandler(event) {
+            console.log(event);
+            // 左键是 event.button = 0
+            // 中键是 event.button = 1
+            // 右键是 event.button = 2
+            if (event.button == 0 && !flag) {
+                points.push({
+                    x: event.pageX - cvsClientRect.x,
+                    y: event.pageY - cvsClientRect.y
+                });
+                console.log(points);
+                if (points.length >= 1) {
+                    cvs.addEventListener("mousemove", mousemoveHandler, false);
+                }
+                drawPolygon(points);
+            } 
+            // else if (event.button === 2) {
+            //     flag = true;
+            //     cvs.removeEventListener("mousemove", mousemoveHandler);
+            // }
+        }
+        function doubleClick(event) {
+            flag = true;
+            cvs.removeEventListener('mousemove',mousemoveHandler);
+        }
+        function drawPolygon(points) {
+            ctx.clearRect(0, 0, 800, 400);  // 清空给定矩形
+            ctx.strokeStyle = '#000';
+            ctx.fillStyle = "red";
+            ctx.fill();  
+            ctx.beginPath();
+            ctx.moveTo(points[0].x, points[0].y);
+            for (var i = 1; i < points.length; i++) {
+                ctx.lineTo(points[i].x, points[i].y);
+            }
+            ctx.closePath();
+            ctx.stroke();
+        }
+
+        function mousemoveHandler(event) {
+            drawPolygon(points.concat({
+                x: event.pageX - cvsClientRect.x,
+                y: event.pageY - cvsClientRect.y
+            }));
+        }
+    </script>
+</body>
+
+</html>
