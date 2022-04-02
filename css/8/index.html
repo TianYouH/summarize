@@ -1,54 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="Generator" content="EditPlus®" />
-    <meta name="Author" content="" />
-    <meta name="Keywords" content="" />
-    <meta name="Description" content="" />
-    <title>文字溢出隐藏与超长标题自动省略号</title>
-    <style>
-      div.elli {
-        border: 1px solid;
-        overflow: hidden; /*超出部分隐藏*/
-        white-space: nowrap; /*强制在一行显示*/
-        text-overflow: ellipsis;
-        width: 200px;
-        height: 20px;
-      }
-      div.clip {
-        border: 1px solid;
-        overflow: hidden; /*超出部分隐藏*/
-        white-space: nowrap; /*强制在一行显示*/
-        text-overflow: clip;
-        width: 200px;
-        height: 20px;
-      }
-      div.hide {
-        overflow: hidden;
-        border: 1px solid;
-        width: 200px;
-        height: 50px;
-      }
-      div.scroll {
-        overflow: scroll;
-        border: 1px solid;
-        width: 200px;
-        height: 50px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="clip">如果此处的文字较多，将自动裁切裁切裁切裁切</div>
-    <br />
-    <div class="elli"><a href="#">如果此处的文字较多，将自动用省略号代替！</a></div>
-    <br />
-    <div class="hide">
-      如果此处的文字较多，将自动隐藏！如果此处的文字较多，将自动隐藏！如果此处的文字较多，将自动隐藏！如果此处的文字较多，将自动隐藏！如果此处的文字较多，将自动隐藏！
-    </div>
-    <br />
-    <div class="scroll">
-      如果此处的文字较多，将出现滚动条！如果此处的文字较多，将出现滚动条！如果此处的文字较多，将出现滚动条！
-    </div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="Generator" content="EditPlus®" />
+  <meta name="Author" content="" />
+  <meta name="Keywords" content="" />
+  <meta name="Description" content="" />
+  <title>文字溢出隐藏与超长标题自动省略号</title>
+  <style>
+    div.elli {
+      border: 1px solid;
+      overflow: hidden;
+      /*超出部分隐藏*/
+      white-space: nowrap;
+      /*强制在一行显示*/
+      text-overflow: ellipsis;
+      width: 200px;
+      height: 20px;
+    }
+
+    div.clip {
+      border: 1px solid;
+      overflow: hidden;
+      /*超出部分隐藏*/
+      white-space: nowrap;
+      /*强制在一行显示*/
+      text-overflow: clip;
+      width: 200px;
+      height: 20px;
+    }
+
+    div.hide {
+      overflow: hidden;
+      border: 1px solid;
+      width: 200px;
+      height: 50px;
+    }
+
+    div.scroll {
+      overflow: scroll;
+      border: 1px solid;
+      width: 200px;
+      height: 50px;
+    }
+
+    /* 多行 省略 测试 */
+    .mutil-line-ellipsis {
+      border: 1px solid #dfdfdf;
+      /* 增加行高调整高度 一 */
+      height: 40px; 
+      width: 400px;
+      line-height: 20px;
+      overflow: hidden;
+    }
+
+    .mutil-line-ellipsis:before {
+      content: '';
+      float: left;
+      /*缩小宽度为5px，其余属性不变*/
+      width: 5px;
+      /* 增加行高调整高度 二 */
+      height: 40px;
+    }
+
+    .mutil-line-ellipsis> :first-child {
+      float: right;
+      width: 100%;
+      margin-left: -5px;
+      /*让main元素左移5px，这样main元素在宽度上就完全占满了父元素；*/
+      word-break: break-all;
+
+      padding-right: 10px;
+      box-sizing: border-box;
+      text-align: justify;
+
+    }
+
+    .mutil-line-ellipsis:after {
+      content: '...';
+      box-sizing: content-box;
+      float: right;
+      position: relative;
+      width: 11px;
+      height: 20px;
+      top: -20px;
+      /*等于高度的负值，就是文字的行高*/
+      left: 100%;
+      /*设置margin-left。padding-right。则是为了让realend元素的盒模型的最终宽度计算为5px。*/
+      margin-left: -11px;
+      padding-right: 5px;
+      font-size: 13px;
+      text-align: left;
+      background: #fff;
+      /* W3C */
+    }
+  </style>
+</head>
+
+<body>
+  <h2>clip 自动裁切</h2>
+  <div class="clip">如果此处的文字较多，将自动裁切裁切裁切裁切</div>
+  <h2>elli 自动用省略号代替</h2>
+  <div class="elli"><a href="#">如果此处的文字较多，将自动用省略号代替！</a></div>
+  <h2>hide 自动隐藏</h2>
+  <div class="hide">
+    如果此处的文字较多，将自动隐藏！如果此处的文字较多，将自动隐藏！如果此处的文字较多，将自动隐藏！如果此处的文字较多，将自动隐藏！如果此处的文字较多，将自动隐藏！
+  </div>
+  <h2>scroll 出现滚动条</h2>
+  <div class="scroll">
+    如果此处的文字较多，将出现滚动条！如果此处的文字较多，将出现滚动条！如果此处的文字较多，将出现滚动条！
+  </div>
+  <div class="mutil-line-ellipsis">
+    <div>CSS - 纯css实现多行文本溢出省略（兼容所有浏览器）CSS - 纯css实现多行文本溢出省略（兼容所有浏览器）CSS - 纯css实现多行文本溢出省略（兼容所有浏览器）</div>
+  </div>
+</body>
+
 </html>
